@@ -1,0 +1,48 @@
+2018-09-13 02:22:35,535 [INFO] [main] o.s.context.annotation.AnnotationConfigApplicationContext [AbstractApplicationContext.java : 582] Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@1151e434: startup date [Thu Sep 13 02:22:35 CST 2018]; root of context hierarchy
+2018-09-13 02:22:35,791 [INFO] [main] o.s.b.f.annotation.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java : 155] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-09-13 02:22:35,922 [INFO] [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$11d32ff8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-13 02:22:37,233 [INFO] [main] com.paascloud.gateway.PaasCloudGatewayApplication [SpringApplication.java : 597] The following profiles are active: dev
+2018-09-13 02:22:37,262 [INFO] [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [AbstractApplicationContext.java : 582] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3e2943ab: startup date [Thu Sep 13 02:22:37 CST 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1151e434
+2018-09-13 02:22:38,844 [INFO] [main] o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 165] Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-09-13 02:22:38,996 [INFO] [main] o.s.beans.factory.support.DefaultListableBeanFactory [DefaultListableBeanFactory.java : 828] Overriding bean definition for bean 'counterFactory' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.cloud.netflix.zuul.ZuulServerAutoConfiguration$ZuulMetricsConfiguration; factoryMethodName=counterFactory; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/cloud/netflix/zuul/ZuulServerAutoConfiguration$ZuulMetricsConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.cloud.netflix.zuul.ZuulServerAutoConfiguration$ZuulCounterFactoryConfiguration; factoryMethodName=counterFactory; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/cloud/netflix/zuul/ZuulServerAutoConfiguration$ZuulCounterFactoryConfiguration.class]]
+2018-09-13 02:22:39,205 [INFO] [main] org.springframework.cloud.context.scope.GenericScope [GenericScope.java : 289] BeanFactory id=48464f0e-fbda-3789-a02e-8b5ecb6e5597
+2018-09-13 02:22:39,236 [INFO] [main] o.s.b.f.annotation.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java : 155] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-09-13 02:22:39,687 [INFO] [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 325] Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$11d32ff8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-13 02:22:40,203 [INFO] [main] o.s.b.context.embedded.tomcat.TomcatEmbeddedServletContainer [TomcatEmbeddedServletContainer.java : 92] Tomcat initialized with port(s): 7979 (http)
+2018-09-13 02:22:40,249 [INFO] [main] org.apache.catalina.core.StandardService [DirectJDKLog.java : 180] Starting service [Tomcat]
+2018-09-13 02:22:40,249 [INFO] [main] org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 180] Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-09-13 02:22:40,499 [INFO] [localhost-startStop-1] o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 180] Initializing Spring embedded WebApplicationContext
+2018-09-13 02:22:40,500 [INFO] [localhost-startStop-1] org.springframework.web.context.ContextLoader [EmbeddedWebApplicationContext.java : 276] Root WebApplicationContext: initialization completed in 3238 ms
+2018-09-13 02:22:42,986 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'metricsFilter' to: [/*]
+2018-09-13 02:22:42,986 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-09-13 02:22:42,987 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-09-13 02:22:42,987 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-09-13 02:22:42,987 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'requestContextFilter' to: [/*]
+2018-09-13 02:22:42,989 [INFO] [localhost-startStop-1] o.s.boot.web.servlet.DelegatingFilterProxyRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-09-13 02:22:42,989 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'webRequestLoggingFilter' to: [/*]
+2018-09-13 02:22:42,989 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'oauth2ClientContextFilter' to: [/*]
+2018-09-13 02:22:42,989 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'corsFilter' to: [/*]
+2018-09-13 02:22:42,989 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean [AbstractFilterRegistrationBean.java : 258] Mapping filter: 'applicationContextIdFilter' to: [/*]
+2018-09-13 02:22:42,989 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean [ServletRegistrationBean.java : 190] Mapping servlet: 'dispatcherServlet' to [/]
+2018-09-13 02:22:42,991 [INFO] [localhost-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean [ServletRegistrationBean.java : 190] Mapping servlet: 'zuulServlet' to [/zuul/*]
+2018-09-13 02:22:43,627 [INFO] [main] o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 180] jolokia: No access restrictor found, access to any MBean is allowed
+2018-09-13 02:22:44,011 [WARN] [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [AbstractApplicationContext.java : 550] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'renewFilter': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.oauth2.provider.token.store.JwtTokenStore' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+2018-09-13 02:22:44,013 [INFO] [main] org.apache.catalina.core.StandardService [DirectJDKLog.java : 180] Stopping service [Tomcat]
+2018-09-13 02:22:44,034 [INFO] [main] o.s.b.a.logging.AutoConfigurationReportLoggingInitializer [AutoConfigurationReportLoggingInitializer.java : 101] 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-09-13 02:22:44,346 [ERROR] [main] o.s.boot.diagnostics.LoggingFailureAnalysisReporter [LoggingFailureAnalysisReporter.java : 42] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean of type 'org.springframework.security.oauth2.provider.token.store.JwtTokenStore' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.oauth2.provider.token.store.JwtTokenStore' in your configuration.
+

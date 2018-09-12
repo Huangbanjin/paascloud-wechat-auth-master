@@ -1,0 +1,12 @@
+server:
+  port: 9000
+  max-http-header-size: 102400
+  tomcat:
+    uri-encoding: utf-8
+    max-http-post-size: 102400
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: @pom.artifactId@

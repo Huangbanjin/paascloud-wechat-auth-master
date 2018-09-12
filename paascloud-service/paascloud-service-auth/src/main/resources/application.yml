@@ -1,0 +1,9 @@
+server:
+  port: 8090
+  context-path: /sac
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: @pom.artifactId@
