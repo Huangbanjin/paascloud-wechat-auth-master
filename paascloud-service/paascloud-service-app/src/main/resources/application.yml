@@ -5,4 +5,4 @@ spring:
   profiles:
     active: dev
   application:
-    name: @pom.artifactId@
+    name: paascloud-service-app

@@ -20,6 +20,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  * The class Resource server config.
@@ -36,8 +37,10 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	public void configure(HttpSecurity http) throws Exception {
 
 		ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry registry = http.authorizeRequests();
-		paascloudProperties.getSecurity().getOauth2().getIgnore().getUrls().forEach(url ->registry.antMatchers(url).permitAll());
-
+		List<String> urls = paascloudProperties.getSecurity().getOauth2().getIgnore().getUrls();
+		if(urls != null && urls.size() > 0 ){
+			urls.forEach(url ->registry.antMatchers(url).permitAll());
+		}
 		registry.anyRequest().authenticated()
 				.and()
 				.csrf().disable();

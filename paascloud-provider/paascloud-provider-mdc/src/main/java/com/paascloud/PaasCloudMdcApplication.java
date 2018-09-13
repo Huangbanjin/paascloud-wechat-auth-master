@@ -30,8 +30,10 @@ import javax.sql.DataSource;
  * @author paascloud.net@gmail.com
  */
 @EnableCaching
+@EnableHystrix
 @EnableFeignClients
-@SpringCloudApplication
+@EnableDiscoveryClient
+@SpringBootApplication
 @EnableTransactionManagement
 public class PaasCloudMdcApplication {
 
