@@ -16,4 +16,3 @@ eureka:
       defaultZone: http://root:root@paascloud-eureka:8761/eureka/
   instance:
     instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
-

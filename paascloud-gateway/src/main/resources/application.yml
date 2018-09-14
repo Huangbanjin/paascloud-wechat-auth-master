@@ -4,6 +4,7 @@ server:
   tomcat:
     uri-encoding: utf-8
     max-http-post-size: 102400
+
 spring:
   profiles:
     active: dev
@@ -12,8 +13,4 @@ spring:
 
 swagger:
   title: paascloud-gateway
-  description: paascloud-gateway-description
-feign:
-  httpclient:
-    enabled: true
-
+  description: swagger description

@@ -11,7 +11,7 @@
 
 package com.paascloud.service.security;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.paascloud.config.properties.PaascloudProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -27,6 +27,7 @@ import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
+import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
@@ -45,9 +46,9 @@ import java.util.List;
 @EnableAuthorizationServer
 public class PcAuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
-    @Autowired
+    @Resource
     private TokenStore tokenStore;
-    @Autowired
+    @Resource
     private AuthenticationManager authenticationManager;
     @Resource
     private UserDetailsService userDetailsService;
@@ -55,9 +56,30 @@ public class PcAuthorizationServerConfig extends AuthorizationServerConfigurerAd
     private JwtAccessTokenConverter jwtAccessTokenConverter;
     @Resource
     private TokenEnhancer jwtTokenEnhancer;
-
     @Resource
     private DataSource dataSource;
+    @Resource
+    private PaascloudProperties paascloudProperties;
+
+    @Bean
+    public TokenStore tokenStore() {
+        return new JwtTokenStore(jwtAccessTokenConverter());
+    }
+
+    @Bean
+    public JwtAccessTokenConverter jwtAccessTokenConverter() {
+        JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
+//        SecurityProperties Security = paascloudProperties.getSecurity();
+//        OAuth2Properties oauth2 = Security.getOauth2();
+//        String jwtsigningKey = oauth2.getJwtSigningKey();
+
+//        if(StringUtils.isBlank(jwtsigningKey)){
+//            jwtsigningKey = "paascloud";
+//        }
+        String jwtsigningKey = "paascloud";
+        converter.setSigningKey(jwtsigningKey);
+        return converter;
+    }
 
     /**
      * 记住我功能的token存取器配置

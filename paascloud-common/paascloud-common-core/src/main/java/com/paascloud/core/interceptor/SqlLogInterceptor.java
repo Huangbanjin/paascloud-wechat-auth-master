@@ -45,8 +45,8 @@ import java.util.*;
 @Slf4j
 @Order(1)
 public class SqlLogInterceptor implements Interceptor {
-//	@Value("${paascloud.enableSqlLogInterceptor}")
-	private boolean enableSqlLogInterceptor=false;
+	@Value("${paascloud.enableSqlLogInterceptor}")
+	private boolean enableSqlLogInterceptor;
 
 	/**
 	 * 关注时间 单位秒，默认值 5

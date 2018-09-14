@@ -21,7 +21,6 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
-import org.springframework.http.HttpHeaders;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.crypto.codec.Base64;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -40,22 +39,6 @@ import java.net.UnknownHostException;
 @Slf4j
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class RequestUtil {
-
-	/**
-	 * Gets auth header.
-	 *
-	 * @param request the request
-	 *
-	 * @return the auth header
-	 */
-	public static String getAuthHeader(HttpServletRequest request) {
-
-		String authHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
-		if (org.apache.commons.lang.StringUtils.isEmpty(authHeader)) {
-			throw new BusinessException(ErrorCodeEnum.UAC10011040);
-		}
-		return authHeader;
-	}
 
 	/**
 	 * Gets request.

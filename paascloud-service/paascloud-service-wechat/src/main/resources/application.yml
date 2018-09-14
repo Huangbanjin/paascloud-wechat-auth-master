@@ -6,3 +6,8 @@ spring:
     active: dev
   application:
     name: paascloud-service-wechat
+  datasource:
+    url: jdbc:mysql://paascloud-db-mysql:3306?characterEncoding=utf8&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
