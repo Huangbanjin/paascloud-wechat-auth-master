@@ -9,7 +9,7 @@
  * 项目官网: http://paascloud.net
  */
 
-package com.paascloud.service.security;
+package com.paascloud.gateway.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -80,7 +80,6 @@ public class PcAuthorizationServerConfig extends AuthorizationServerConfigurerAd
     public PersistentTokenRepository persistentTokenRepository() {
         JdbcTokenRepositoryImpl tokenRepository = new JdbcTokenRepositoryImpl();
         tokenRepository.setDataSource(dataSource);
-//		tokenRepository.setCreateTableOnStartup(true); // 第一次启动创建
         return tokenRepository;
     }
 

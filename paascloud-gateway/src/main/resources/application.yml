@@ -10,7 +10,11 @@ spring:
     active: dev
   application:
     name: paascloud-gateway
-
+  datasource:
+    url: jdbc:mysql://paascloud-db-mysql:3306/paascloud_token?characterEncoding=utf8&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
 swagger:
   title: paascloud-gateway
   description: swagger description
