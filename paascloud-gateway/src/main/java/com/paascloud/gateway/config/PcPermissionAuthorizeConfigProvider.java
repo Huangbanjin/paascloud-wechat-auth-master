@@ -19,7 +19,7 @@ public class PcPermissionAuthorizeConfigProvider implements AuthorizeConfigProvi
 	 * Config boolean.
 	 *
 	 * @param config the config
-	 *
+	 * http://127.0.0.1:7979/uac/oauth/token---走这里
 	 * @return the boolean
 	 */
 	@Override

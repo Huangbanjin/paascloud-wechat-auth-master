@@ -64,7 +64,7 @@ public class EmailServiceImpl implements EmailService {
 
 		// 获取用户名
 		UacUser uacUser = new UacUser();
-		uacUser.setEmail(email);
+		uacUser.setEmail(email);//根据邮件地址选择用户
 		uacUser = uacUserService.selectOne(uacUser);
 		if (uacUser == null) {
 			throw new UacBizException(ErrorCodeEnum.UAC10011004, email);

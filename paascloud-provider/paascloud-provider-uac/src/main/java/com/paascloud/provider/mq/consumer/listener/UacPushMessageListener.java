@@ -78,7 +78,7 @@ public class UacPushMessageListener implements MessageListenerConcurrently {
 			return ConsumeConcurrentlyStatus.RECONSUME_LATER;
 		}
 
-		redisService.setKey(keys, keys, 10, TimeUnit.DAYS);
+		redisService.setKey(keys, keys, 10, TimeUnit.DAYS);//消费了消息就缓存在redis里
 		return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
 	}
 }

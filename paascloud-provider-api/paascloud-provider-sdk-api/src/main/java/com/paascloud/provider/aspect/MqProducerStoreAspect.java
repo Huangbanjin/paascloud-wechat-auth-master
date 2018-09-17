@@ -51,6 +51,7 @@ public class MqProducerStoreAspect {
 
 	/**
 	 * Add exe time annotation pointcut.
+	 * //消息生产者注解作为切入点
 	 */
 	@Pointcut("@annotation(com.paascloud.provider.annotation.MqProducerStore)")
 	public void mqProducerStoreAnnotationPointcut() {

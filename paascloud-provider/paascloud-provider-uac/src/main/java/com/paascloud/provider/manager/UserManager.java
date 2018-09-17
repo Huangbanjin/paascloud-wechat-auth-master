@@ -54,7 +54,7 @@ public class UserManager {
 		log.info("重置密码发送邮件. messageData={}", messageData);
 	}
 
-	@MqProducerStore
+	@MqProducerStore //自定义注解-保存生产者消息.
 	public void register(final MqMessageData mqMessageData, final UacUser uacUser) {
 		log.info("注册用户. mqMessageData={}, user={}", mqMessageData, uacUser);
 		uacUserMapper.insertSelective(uacUser);

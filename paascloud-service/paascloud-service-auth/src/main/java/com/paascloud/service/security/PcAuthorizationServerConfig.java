@@ -11,6 +11,7 @@
 
 package com.paascloud.service.security;
 
+import com.paascloud.config.properties.PaascloudProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -57,6 +58,8 @@ public class PcAuthorizationServerConfig extends AuthorizationServerConfigurerAd
     private TokenEnhancer jwtTokenEnhancer;
     @Resource
     private DataSource dataSource;
+    @Resource
+    private PaascloudProperties paascloudProperties;
 
     @Bean
     public TokenStore tokenStore() {
@@ -66,6 +69,13 @@ public class PcAuthorizationServerConfig extends AuthorizationServerConfigurerAd
     @Bean
     public JwtAccessTokenConverter jwtAccessTokenConverter() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
+//        SecurityProperties Security = paascloudProperties.getSecurity();
+//        OAuth2Properties oauth2 = Security.getOauth2();
+//        String jwtsigningKey = oauth2.getJwtSigningKey();
+
+//        if(StringUtils.isBlank(jwtsigningKey)){
+//            jwtsigningKey = "paascloud";
+//        }
         String jwtsigningKey = "paascloud";
         converter.setSigningKey(jwtsigningKey);
         return converter;
@@ -118,17 +128,17 @@ public class PcAuthorizationServerConfig extends AuthorizationServerConfigurerAd
      */
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
-
-
         endpoints.tokenStore(tokenStore)
                 .authenticationManager(authenticationManager)
                 .userDetailsService(userDetailsService);
 
-        TokenEnhancerChain enhancerChain = new TokenEnhancerChain();
-        List<TokenEnhancer> enhancers = new ArrayList<>();
-        enhancers.add(jwtTokenEnhancer);
-        enhancers.add(jwtAccessTokenConverter);
-        enhancerChain.setTokenEnhancers(enhancers);
-        endpoints.tokenEnhancer(enhancerChain).accessTokenConverter(jwtAccessTokenConverter);
+        if (jwtAccessTokenConverter != null && jwtTokenEnhancer != null) {
+            TokenEnhancerChain enhancerChain = new TokenEnhancerChain();
+            List<TokenEnhancer> enhancers = new ArrayList<>();
+            enhancers.add(jwtTokenEnhancer);
+            enhancers.add(jwtAccessTokenConverter);
+            enhancerChain.setTokenEnhancers(enhancers);
+            endpoints.tokenEnhancer(enhancerChain).accessTokenConverter(jwtAccessTokenConverter);
+        }
     }
 }
